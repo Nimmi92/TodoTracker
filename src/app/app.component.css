@@ -1,0 +1,26 @@
+.container {
+	width: 500px;
+	margin: 20px auto;
+	border: 1px solid #000;
+	padding: 20px;
+}
+button {
+	margin: 10px;
+	border: 1px solid #000;
+	background: blue;
+	padding: 10px;
+}
+input[type="text"] {
+	padding: 10px;
+	min-width: 200px;
+	border: 1px solid #ccc;
+}
+.line-through {
+	text-decoration: line-through;
+}
+.todoItems input[type="text"] {
+	border: none;
+}
+.todoItems input[type="text"].editing {
+	border: 1px solid #ccc;
+}

@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>
+   Todo Tracker
+  </h1>
+<form
+  [formGroup]="form">
+<h2>Add Todo</h2>
+<input type="text" name="item" id="item" formControlName="item"/>
+<button (click)="addItem(form.controls.item.value)">Add</button>
+<br/>
+<h2>Todo Items</h2>
+<p> You have {{items.length}} tasks to complete</p>
+<ul class="todoItems">
+  <li *ngFor="let item of items; index as i">
+    <div> 
+      <input type="text" [ngClass]="{'editing' : item.editing === true}" value={{item.task}} name="editItemBox"  formControlName="editItemBox"/>
+      <button *ngIf="item.editing" (click)="saveItem(i,form.controls.editItemBox.value)">Save</button>
+      <button *ngIf="!item.editing" (click)="editItem(i,form.controls.editItemBox.value)">Edit</button>
+      <button (click)="deleteItem(i)" >Delete</button>
+    </div>
+  </li>
+</ul>
+<br/>
+<h2>Completed Items</h2>
+<ul>
+  <li *ngFor="let completedItem of completedItems; i as index">
+    <p class="line-through">{{completedItem.task}}</p>
+  </li>
+</ul>
+</form>
+</div>
+
+
